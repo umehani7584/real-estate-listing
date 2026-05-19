@@ -1,0 +1,159 @@
+.header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--card-shadow);
+}
+
+.header-content {
+  padding: 15px 0;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo-icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+
+.nav-link {
+  background: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-primary);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.nav-mobile {
+  display: none;
+  padding: 15px 0;
+  border-top: 1px solid var(--border-color);
+  animation: slideDown 0.3s ease-in;
+}
+
+.nav-mobile.active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.nav-link-mobile {
+  background: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 12px;
+  border-radius: 6px;
+  transition: all 0.3s;
+  text-align: left;
+  width: 100%;
+  border: 2px solid transparent;
+}
+
+.nav-link-mobile:hover {
+  background-color: var(--bg-primary);
+  color: var(--primary-color);
+}
+
+.nav-link-mobile.active {
+  background-color: var(--bg-primary);
+  color: var(--primary-color);
+  border-left: 3px solid var(--primary-color);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}

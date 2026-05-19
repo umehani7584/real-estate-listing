@@ -1,0 +1,222 @@
+export const propertiesData = [
+  {
+    id: 1,
+    title: "Modern Downtown Loft",
+    price: 450000,
+    location: "Downtown Manhattan, NY",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 1200,
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop",
+    description: "Stunning modern loft with floor-to-ceiling windows, open kitchen, and premium finishes. Perfect for urban lifestyle."
+  },
+  {
+    id: 2,
+    title: "Luxury Penthouse Suite",
+    price: 1200000,
+    location: "Upper East Side, NY",
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 3500,
+    image: "https://images.unsplash.com/photo-1512917774080-9b274b94f81b?w=500&h=400&fit=crop",
+    description: "Exclusive penthouse with panoramic city views, private terrace, and concierge service."
+  },
+  {
+    id: 3,
+    title: "Cozy Studio Apartment",
+    price: 280000,
+    location: "Brooklyn, NY",
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 550,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop",
+    description: "Charming studio in vibrant Brooklyn neighborhood. Recently renovated with modern amenities."
+  },
+  {
+    id: 4,
+    title: "Family Home with Garden",
+    price: 650000,
+    location: "Queens, NY",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 2000,
+    image: "https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&h=400&fit=crop",
+    description: "Spacious family home with large backyard, updated kitchen, and excellent schools nearby."
+  },
+  {
+    id: 5,
+    title: "Waterfront Apartment",
+    price: 580000,
+    location: "Long Island City, NY",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 1400,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop",
+    description: "Stunning waterfront views with direct access to Hudson River Park. Modern finishes throughout."
+  },
+  {
+    id: 6,
+    title: "Classic Brownstone",
+    price: 890000,
+    location: "Park Slope, Brooklyn",
+    bedrooms: 4,
+    bathrooms: 2,
+    area: 2200,
+    image: "https://images.unsplash.com/photo-1512917774080-9b274b94f81b?w=500&h=400&fit=crop",
+    description: "Charming classic brownstone with original details and modern renovations. Tree-lined street."
+  },
+  {
+    id: 7,
+    title: "Contemporary Glass Tower",
+    price: 950000,
+    location: "Midtown Manhattan, NY",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1800,
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop",
+    description: "Sleek high-rise apartment with floor-to-ceiling glass walls and smart home features."
+  },
+  {
+    id: 8,
+    title: "Spacious Corner Unit",
+    price: 720000,
+    location: "Upper West Side, NY",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1900,
+    image: "https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&h=400&fit=crop",
+    description: "Bright corner unit with abundant natural light. Close to museums and Central Park."
+  },
+  {
+    id: 9,
+    title: "Artist's Loft Studio",
+    price: 380000,
+    location: "Williamsburg, Brooklyn",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 1100,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop",
+    description: "Artistic loft with exposed brick, high ceilings, and plenty of natural light."
+  },
+  {
+    id: 10,
+    title: "Luxury Studio with Gym",
+    price: 320000,
+    location: "Hell's Kitchen, NY",
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 650,
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop",
+    description: "Modern studio in luxury building with gym, doorman, and rooftop access."
+  },
+  {
+    id: 11,
+    title: "Suburban Family Estate",
+    price: 520000,
+    location: "Westchester County, NY",
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 2500,
+    image: "https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&h=400&fit=crop",
+    description: "Beautiful estate with pool, tennis court, and acres of manicured grounds."
+  },
+  {
+    id: 12,
+    title: "Minimalist Apartment",
+    price: 410000,
+    location: "Astoria, Queens",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 900,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop",
+    description: "Clean, minimalist 2-bedroom apartment with smart storage solutions."
+  },
+  {
+    id: 13,
+    title: "Historic Townhouse",
+    price: 1050000,
+    location: "West Village, NY",
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 2400,
+    image: "https://images.unsplash.com/photo-1512917774080-9b274b94f81b?w=500&h=400&fit=crop",
+    description: "Exquisite historic townhouse with private garden and luxury renovations."
+  },
+  {
+    id: 14,
+    title: "Modern Condo",
+    price: 495000,
+    location: "Jersey City, NJ",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 1300,
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop",
+    description: "Brand new condo with all amenities and stunning Hudson River views."
+  },
+  {
+    id: 15,
+    title: "Charming Garden Cottage",
+    price: 380000,
+    location: "Forest Hills, Queens",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 1000,
+    image: "https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&h=400&fit=crop",
+    description: "Quaint cottage-style home with private garden and updated features."
+  },
+  {
+    id: 16,
+    title: "High-Rise Apartment",
+    price: 875000,
+    location: "Financial District, NY",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1700,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop",
+    description: "Luxury apartment in prestigious building with premium views and services."
+  },
+  {
+    id: 17,
+    title: "Modern Villa",
+    price: 1100000,
+    location: "Great Neck, NY",
+    bedrooms: 5,
+    bathrooms: 4,
+    area: 3200,
+    image: "https://images.unsplash.com/photo-1512917774080-9b274b94f81b?w=500&h=400&fit=crop",
+    description: "Stunning modern villa with guest house, infinity pool, and ocean views."
+  },
+  {
+    id: 18,
+    title: "Budget-Friendly Studio",
+    price: 250000,
+    location: "Sunset Park, Brooklyn",
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 450,
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop",
+    description: "Affordable studio perfect for first-time buyers or investors."
+  },
+  {
+    id: 19,
+    title: "Renovated Heritage Home",
+    price: 765000,
+    location: "Ditmas Park, Brooklyn",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1650,
+    image: "https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&h=400&fit=crop",
+    description: "Beautifully renovated historic home preserving original charm with modern comfort."
+  },
+  {
+    id: 20,
+    title: "Executive Penthouse",
+    price: 1350000,
+    location: "Central Park South, NY",
+    bedrooms: 5,
+    bathrooms: 4,
+    area: 4000,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop",
+    description: "Ultimate luxury penthouse with Central Park views, private elevator, and spa."
+  }
+];
