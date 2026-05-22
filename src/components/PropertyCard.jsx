@@ -1,4 +1,4 @@
-import { FiBed, FiBath, FiMapPin, FiHeart } from 'react-icons/fi';
+import { FiMapPin, FiHeart } from 'react-icons/fi';
 import './PropertyCard.css';
 
 export default function PropertyCard({
@@ -54,11 +54,11 @@ export default function PropertyCard({
         {/* Features */}
         <div className="card-features">
           <div className="feature">
-            <FiBed size={18} />
+            <span>🛏️</span>
             <span>{property.bedrooms}</span>
           </div>
           <div className="feature">
-            <FiBath size={18} />
+            <span>🚿</span>
             <span>{property.bathrooms}</span>
           </div>
           <div className="feature">

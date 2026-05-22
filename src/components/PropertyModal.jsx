@@ -1,4 +1,4 @@
-import { FiX, FiBed, FiBath, FiMapPin, FiRuler } from 'react-icons/fi';
+import { FiX, FiMapPin } from 'react-icons/fi';
 import './PropertyModal.css';
 
 export default function PropertyModal({ property, isOpen, onClose }) {
@@ -42,7 +42,7 @@ export default function PropertyModal({ property, isOpen, onClose }) {
           {/* Features Grid */}
           <div className="modal-features">
             <div className="modal-feature">
-              <FiBed size={24} />
+              <span style={{fontSize: '24px'}}>🛏️</span>
               <div>
                 <div className="feature-label">Bedrooms</div>
                 <div className="feature-value">{property.bedrooms}</div>
@@ -50,7 +50,7 @@ export default function PropertyModal({ property, isOpen, onClose }) {
             </div>
 
             <div className="modal-feature">
-              <FiBath size={24} />
+              <span style={{fontSize: '24px'}}>🚿</span>
               <div>
                 <div className="feature-label">Bathrooms</div>
                 <div className="feature-value">{property.bathrooms}</div>
@@ -58,7 +58,7 @@ export default function PropertyModal({ property, isOpen, onClose }) {
             </div>
 
             <div className="modal-feature">
-              <FiRuler size={24} />
+              <span style={{fontSize: '24px'}}>📐</span>
               <div>
                 <div className="feature-label">Area</div>
                 <div className="feature-value">{property.area} sqft</div>
