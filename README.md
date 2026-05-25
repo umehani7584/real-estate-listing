@@ -150,13 +150,7 @@ Small Mobile (< 480px) - Minimal padding, optimized font sizes, full-width eleme
 
 Real-time filtering uses useEffect hook to apply filters instantly when any filter changes without requiring a button click. Theme switching uses CSS variables that automatically update based on selected theme. Favorites persistence uses localStorage to save and retrieve user preferences across sessions. Price conversion multiplies thousands by 1000 for actual property values.
 
----
 
-## 🐛 Issues Fixed
-
-Stats numbers were invisible in light mode - fixed by using explicit hex colors (#2563eb). Page scroll position wasn't resetting on navigation - added window.scrollTo(0, 0) in useEffect. Price filter wasn't working - converted thousands to actual price values. Reset filters showed no properties - ensured reset sets correct default range [200, 1500]. Footer links were unclickable - converted to navigation buttons with proper callbacks.
-
----
 
 ## 🚀 Future Enhancements
 
