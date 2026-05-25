@@ -11,11 +11,30 @@ export default function Home({ favorites, onAddFavorite }) {
   const [priceRange, setPriceRange] = useState([200000, 1500000]);
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedBedrooms, setSelectedBedrooms] = useState('');
+  const [selectedSort, setSelectedSort] = useState('');
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [filteredProperties, setFilteredProperties] = useState(propertiesData);
 
   // Get unique locations from properties
   const locations = [...new Set(propertiesData.map(p => p.location))];
+
+  // Apply sorting function
+  const applySorting = (properties, sortType) => {
+    const sorted = [...properties];
+    
+    switch (sortType) {
+      case 'price-low':
+        return sorted.sort((a, b) => a.price - b.price);
+      case 'price-high':
+        return sorted.sort((a, b) => b.price - a.price);
+      case 'newest':
+        return sorted.sort((a, b) => b.id - a.id);
+      case 'area-large':
+        return sorted.sort((a, b) => b.area - a.area);
+      default:
+        return sorted;
+    }
+  };
 
   // Apply filters
   const handleApplyFilters = () => {
@@ -36,6 +55,9 @@ export default function Home({ favorites, onAddFavorite }) {
       return matchesSearch && matchesPrice && matchesLocation && matchesBedrooms;
     });
 
+    // Apply sorting
+    filtered = applySorting(filtered, selectedSort);
+    
     setFilteredProperties(filtered);
   };
 
@@ -44,6 +66,7 @@ export default function Home({ favorites, onAddFavorite }) {
     setPriceRange([200000, 1500000]);
     setSelectedLocation('');
     setSelectedBedrooms('');
+    setSelectedSort('');
     setFilteredProperties(propertiesData);
   };
 
@@ -61,6 +84,8 @@ export default function Home({ favorites, onAddFavorite }) {
             onLocationChange={setSelectedLocation}
             selectedBedrooms={selectedBedrooms}
             onBedroomsChange={setSelectedBedrooms}
+            selectedSort={selectedSort}
+            onSortChange={setSelectedSort}
             locations={locations}
           />
 

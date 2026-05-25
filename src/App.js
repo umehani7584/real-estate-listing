@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
           <Favorites favorites={favorites} onAddFavorite={handleAddFavorite} />
         )}
       </main>
+      <Footer />
     </div>
   );
 }

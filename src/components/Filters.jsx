@@ -9,6 +9,8 @@ export default function Filters({
   onLocationChange,
   selectedBedrooms,
   onBedroomsChange,
+  selectedSort,
+  onSortChange,
   locations,
 }) {
   const [expandedFilter, setExpandedFilter] = useState(null);
@@ -21,7 +23,16 @@ export default function Filters({
     onPriceChange([200000, 1500000]);
     onLocationChange('');
     onBedroomsChange('');
+    onSortChange('');
   };
+
+  const sortOptions = [
+    { value: '', label: 'Default' },
+    { value: 'price-low', label: 'Price: Low to High' },
+    { value: 'price-high', label: 'Price: High to Low' },
+    { value: 'newest', label: 'Newest First' },
+    { value: 'area-large', label: 'Largest Area First' },
+  ];
 
   return (
     <div className="filters-container">
@@ -35,6 +46,38 @@ export default function Filters({
           <FiRotateCcw size={18} />
           Reset
         </button>
+      </div>
+
+      {/* Sorting Filter */}
+      <div className="filter-group">
+        <button
+          className="filter-title flex-between"
+          onClick={() => toggleFilter('sort')}
+        >
+          <span>Sort By</span>
+          <FiChevronDown
+            className={`chevron ${expandedFilter === 'sort' ? 'open' : ''}`}
+            size={18}
+          />
+        </button>
+        {expandedFilter === 'sort' && (
+          <div className="filter-content">
+            <div className="sort-options">
+              {sortOptions.map((option) => (
+                <label key={option.value} className="sort-option">
+                  <input
+                    type="radio"
+                    name="sort"
+                    value={option.value}
+                    checked={selectedSort === option.value}
+                    onChange={(e) => onSortChange(e.target.value)}
+                  />
+                  <span>{option.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Price Range Filter */}
