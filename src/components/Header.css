@@ -13,19 +13,29 @@
 
 .logo {
   cursor: pointer;
+  gap: 12px;
 }
 
 .logo-icon {
-  font-size: 28px;
+  font-size: 32px;
   display: flex;
   align-items: center;
 }
 
-.logo h1 {
+.logo-text h1 {
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-color);
   margin: 0;
+}
+
+.logo-text p {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Desktop Navigation */
@@ -41,8 +51,8 @@
 
 .nav-link {
   background: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--text-primary);
   padding: 8px 12px;
   border-radius: 6px;
@@ -120,8 +130,8 @@
 
 .nav-link-mobile {
   background: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--text-primary);
   padding: 12px;
   border-radius: 6px;

@@ -18,8 +18,11 @@ export default function Header({ currentPage, onPageChange }) {
         <div className="header-content flex-between">
           {/* Logo */}
           <div className="logo flex gap-10">
-            <div className="logo-icon">🏠</div>
-            <h1>EstateHub</h1>
+            <div className="logo-icon">🏡</div>
+            <div className="logo-text">
+              <h1>EstateHub</h1>
+              <p>Premium Properties</p>
+            </div>
           </div>
 
           {/* Navigation - Desktop */}
@@ -29,6 +32,24 @@ export default function Header({ currentPage, onPageChange }) {
               onClick={() => handleNavClick('home')}
             >
               Home
+            </button>
+            <button
+              className={`nav-link ${currentPage === 'listings' ? 'active' : ''}`}
+              onClick={() => handleNavClick('listings')}
+            >
+              Listings
+            </button>
+            <button
+              className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
+              onClick={() => handleNavClick('about')}
+            >
+              About
+            </button>
+            <button
+              className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
+              onClick={() => handleNavClick('contact')}
+            >
+              Contact
             </button>
             <button
               className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
@@ -67,6 +88,24 @@ export default function Header({ currentPage, onPageChange }) {
               onClick={() => handleNavClick('home')}
             >
               Home
+            </button>
+            <button
+              className={`nav-link-mobile ${currentPage === 'listings' ? 'active' : ''}`}
+              onClick={() => handleNavClick('listings')}
+            >
+              Listings
+            </button>
+            <button
+              className={`nav-link-mobile ${currentPage === 'about' ? 'active' : ''}`}
+              onClick={() => handleNavClick('about')}
+            >
+              About
+            </button>
+            <button
+              className={`nav-link-mobile ${currentPage === 'contact' ? 'active' : ''}`}
+              onClick={() => handleNavClick('contact')}
+            >
+              Contact
             </button>
             <button
               className={`nav-link-mobile ${currentPage === 'favorites' ? 'active' : ''}`}

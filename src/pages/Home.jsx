@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Hero from '../components/Hero';
+import Stats from '../components/Stats';
+import FeaturedProperties from '../components/FeaturedProperties';
 import SearchBar from '../components/SearchBar';
 import Filters from '../components/Filters';
 import PropertyCard from '../components/PropertyCard';
@@ -14,11 +17,10 @@ export default function Home({ favorites, onAddFavorite }) {
   const [selectedSort, setSelectedSort] = useState('');
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [filteredProperties, setFilteredProperties] = useState(propertiesData);
+  const [showListings, setShowListings] = useState(false);
 
-  // Get unique locations from properties
   const locations = [...new Set(propertiesData.map(p => p.location))];
 
-  // Apply sorting function
   const applySorting = (properties, sortType) => {
     const sorted = [...properties];
     
@@ -36,7 +38,6 @@ export default function Home({ favorites, onAddFavorite }) {
     }
   };
 
-  // Apply filters
   const handleApplyFilters = () => {
     let filtered = propertiesData.filter(property => {
       const matchesSearch =
@@ -55,9 +56,7 @@ export default function Home({ favorites, onAddFavorite }) {
       return matchesSearch && matchesPrice && matchesLocation && matchesBedrooms;
     });
 
-    // Apply sorting
     filtered = applySorting(filtered, selectedSort);
-    
     setFilteredProperties(filtered);
   };
 
@@ -70,65 +69,96 @@ export default function Home({ favorites, onAddFavorite }) {
     setFilteredProperties(propertiesData);
   };
 
+  const handleShowListings = () => {
+    setShowListings(true);
+    // Scroll to search section
+    setTimeout(() => {
+      const searchElement = document.querySelector('.search-bar-container');
+      if (searchElement) {
+        searchElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <div className="home-container">
-      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+      {/* Hero Section */}
+      <Hero onExplore={handleShowListings} />
 
-      <div className="home-content">
-        {/* Filters Sidebar */}
-        <aside className="filters-sidebar">
-          <Filters
-            priceRange={priceRange}
-            onPriceChange={setPriceRange}
-            selectedLocation={selectedLocation}
-            onLocationChange={setSelectedLocation}
-            selectedBedrooms={selectedBedrooms}
-            onBedroomsChange={setSelectedBedrooms}
-            selectedSort={selectedSort}
-            onSortChange={setSelectedSort}
-            locations={locations}
-          />
+      {/* Stats Section */}
+      <Stats />
 
-          {/* Apply & Reset Buttons */}
-          <div className="filter-actions">
-            <button className="btn-apply" onClick={handleApplyFilters}>
-              Apply Filters
-            </button>
-            <button className="btn-reset-secondary" onClick={handleResetFilters}>
-              Reset All
-            </button>
+      {/* Featured Properties */}
+      <FeaturedProperties
+        properties={propertiesData}
+        favorites={favorites}
+        onAddFavorite={onAddFavorite}
+        onViewDetails={setSelectedProperty}
+        onShowListings={handleShowListings}
+      />
+
+      {/* Listings Section - Only shows when user clicks "View All" */}
+      {showListings && (
+        <>
+          <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+
+          <div className="home-content">
+            {/* Filters Sidebar */}
+            <aside className="filters-sidebar">
+              <Filters
+                priceRange={priceRange}
+                onPriceChange={setPriceRange}
+                selectedLocation={selectedLocation}
+                onLocationChange={setSelectedLocation}
+                selectedBedrooms={selectedBedrooms}
+                onBedroomsChange={setSelectedBedrooms}
+                selectedSort={selectedSort}
+                onSortChange={setSelectedSort}
+                locations={locations}
+              />
+
+              {/* Apply & Reset Buttons */}
+              <div className="filter-actions">
+                <button className="btn-apply" onClick={handleApplyFilters}>
+                  Apply Filters
+                </button>
+                <button className="btn-reset-secondary" onClick={handleResetFilters}>
+                  Reset All
+                </button>
+              </div>
+            </aside>
+
+            {/* Properties Grid */}
+            <main className="properties-main">
+              <div className="results-header">
+                <h2>Available Properties</h2>
+                <p className="results-count">{filteredProperties.length} properties found</p>
+              </div>
+
+              {filteredProperties.length > 0 ? (
+                <div className="properties-grid">
+                  {filteredProperties.map(property => (
+                    <PropertyCard
+                      key={property.id}
+                      property={property}
+                      isFavorite={favorites.includes(property.id)}
+                      onAddFavorite={onAddFavorite}
+                      onViewDetails={setSelectedProperty}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="no-results">
+                  <p>No properties match your filters.</p>
+                  <button className="btn-reset-secondary" onClick={handleResetFilters}>
+                    Reset Filters
+                  </button>
+                </div>
+              )}
+            </main>
           </div>
-        </aside>
-
-        {/* Properties Grid */}
-        <main className="properties-main">
-          <div className="results-header">
-            <h2>Available Properties</h2>
-            <p className="results-count">{filteredProperties.length} properties found</p>
-          </div>
-
-          {filteredProperties.length > 0 ? (
-            <div className="properties-grid">
-              {filteredProperties.map(property => (
-                <PropertyCard
-                  key={property.id}
-                  property={property}
-                  isFavorite={favorites.includes(property.id)}
-                  onAddFavorite={onAddFavorite}
-                  onViewDetails={setSelectedProperty}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="no-results">
-              <p>No properties match your filters.</p>
-              <button className="btn-reset-secondary" onClick={handleResetFilters}>
-                Reset Filters
-              </button>
-            </div>
-          )}
-        </main>
-      </div>
+        </>
+      )}
 
       {/* Property Modal */}
       <PropertyModal
